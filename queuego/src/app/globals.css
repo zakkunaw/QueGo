@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #F5F6F8;
+  --color-foreground: #1D2939;
+  --color-primary: #1D9E75;
+  --color-primary-dark: #167355;
+  --color-primary-light: #E8F5E9;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg-base: #F5F6F8;
+  --color-bg-surface: #F8F9FA;
+  --color-text-main: #1D2939;
+  --color-text-sub: #667085;
+  --color-text-muted: #98A2B3;
+  --color-text-medium: #475467;
+  --color-border-main: #E4E7EC;
+  --color-bg-light: #F2F4F7;
+  --color-bg-hover: #F9FAFB;
+  --color-bg-dark: #101213;
+  --color-red-danger: #B42318;
+  --color-danger-bg: #FEE4E2;
+  --color-danger-border: #FECDCA;
+  --color-danger-dark: #D92D20;
+  --color-success-bg: #E8F5E9;
+  --color-success-text: #1D9E75;
+  --color-success-border: #A9EFBF;
+  --color-warning-bg: #FEEFC6;
+  --color-warning-text: #B54708;
+  --color-warning-border: #FEDF89;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #E4E7EC;
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.03);
+  padding: 1.5rem;
+  transition: all 150ms ease;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+.btn-primary {
+  background-color: #101213;
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 150ms ease;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1D2939;
+  border: 1px solid #E4E7EC;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 150ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-secondary:hover {
+  background-color: #F9FAFB;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-danger {
+  background-color: #D92D20;
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 150ms ease;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-danger:hover {
+  background-color: #B42318;
+}
+
+.btn-danger:active {
+  transform: scale(0.98);
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #E4E7EC;
+  border-radius: 12px;
+  color: #1D2939;
+  outline: none;
+  transition: all 150ms ease;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 1px #101213;
+  border-color: #101213;
+}
+
+.input-field::placeholder {
+  color: #98A2B3;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-width: 1px;
+  border-style: solid;
+  user-select: none;
+}
+
+.status-menunggu_konfirmasi {
+  background-color: #FEEFC6;
+  color: #B54708;
+  border-color: #FEDF89;
+}
+
+.status-aktif {
+  background-color: #D1FADF;
+  color: #027A48;
+  border-color: #A9EFBF;
+}
+
+.status-dipanggil {
+  background-color: #D1E9FF;
+  color: #0053C4;
+  border-color: #B2DDFF;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.status-selesai {
+  background-color: #F2F4F7;
+  color: #475467;
+  border-color: #E4E7EC;
+}
+
+.status-expired {
+  background-color: #FEE4E2;
+  color: #B42318;
+  border-color: #FECDCA;
+}
+
+/* ANIMASI JAM DINDING (CUSTOMER STATUS PAGE) */
+@keyframes spin-hand {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-hand-fast {
+  transform-origin: 12px 12px;
+  animation: spin-hand 8s linear infinite;
+}
+
+.animate-hand-slow {
+  transform-origin: 12px 12px;
+  animation: spin-hand 96s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

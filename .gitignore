@@ -1,0 +1,42 @@
+# Dependensi dan paket Node.js
+queuego/node_modules/
+node_modules/
+
+# Hasil kompilasi dan build Next.js
+queuego/.next/
+queuego/out/
+.next/
+out/
+
+# Hasil build produksi lainnya
+queuego/build/
+build/
+
+# File variabel lingkungan lokal (kredensial sensitif / API keys)
+queuego/.env.local
+queuego/.env.*.local
+queuego/.env
+queuego/.env.development
+queuego/.env.production
+.env.local
+.env.*.local
+.env
+.env.development
+.env.production
+
+# Folder konfigurasi editor / IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
