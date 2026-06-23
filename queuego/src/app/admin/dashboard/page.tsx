@@ -315,17 +315,17 @@ export default function AdminDashboard() {
                     {antrianAktif.map((item) => (
                       <div
                         key={item.id}
-                        className={`bg-white border border-border-main rounded-xl flex items-center justify-between gap-4 p-4 shadow-sm hover:border-bg-dark/20 hover:-translate-y-0.5 transition-all duration-150 ${
+                        className={`bg-white border border-border-main rounded-[16px] flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-4 shadow-sm hover:border-bg-dark/20 hover:-translate-y-0.5 transition-all duration-150 ${
                           item.status === "dipanggil" ? "border-blue-300 bg-blue-50/20" : ""
                         }`}
                       >
                         <div className="flex items-center gap-4 min-w-0">
                           {/* Nomor Antrean Bulat */}
-                          <div className="h-12 w-12 rounded-xl flex items-center justify-center font-bold text-lg bg-bg-light text-text-main">
+                          <div className="h-12 w-12 rounded-xl flex items-center justify-center font-bold text-lg bg-bg-light text-text-main shrink-0">
                             {item.nomor}
                           </div>
                           <div className="min-w-0">
-                            <p className="font-bold text-text-main truncate">{item.nama_customer || "Tanpa Nama"}</p>
+                            <p className="font-bold text-text-main truncate text-sm md:text-base">{item.nama_customer || "Tanpa Nama"}</p>
                             <div className="flex items-center gap-2 mt-1">
                               <span className={`status-badge status-${item.status}`}>
                                 {item.status === "aktif" ? "Menunggu" : "Dipanggil"}
@@ -334,12 +334,12 @@ export default function AdminDashboard() {
                           </div>
                         </div>
                         {/* Aksi Aksi di Kanan */}
-                        <div className="flex items-center gap-2 shrink-0">
+                        <div className="flex items-center gap-2 justify-end w-full sm:w-auto border-t border-border-main/60 pt-3 sm:pt-0 sm:border-0 shrink-0">
                           {item.status === "aktif" && (
                             <button
                               onClick={() => handleAction("panggil", item.id)}
                               disabled={actionLoading === item.id}
-                              className="bg-blue-600 text-white px-4 py-2.5 rounded-lg text-xs md:text-sm font-semibold hover:bg-blue-700 cursor-pointer disabled:opacity-50"
+                              className="bg-[#0053C4] hover:bg-[#003B91] text-white px-4 rounded-xl text-xs md:text-sm font-semibold transition-all duration-150 cursor-pointer disabled:opacity-50 h-10 flex items-center justify-center active:scale-95 flex-1 sm:flex-initial"
                             >
                               {actionLoading === item.id ? "..." : "Panggil"}
                             </button>
@@ -347,7 +347,7 @@ export default function AdminDashboard() {
                           <button
                             onClick={() => handleAction("selesai", item.id)}
                             disabled={actionLoading === item.id}
-                            className="bg-bg-light text-text-medium border border-border-main px-4 py-2.5 rounded-lg text-xs md:text-sm font-semibold hover:bg-border-main cursor-pointer disabled:opacity-50"
+                            className="bg-white text-text-main border border-border-main px-4 rounded-xl text-xs md:text-sm font-semibold hover:bg-bg-hover transition-all duration-150 cursor-pointer disabled:opacity-50 h-10 flex items-center justify-center active:scale-95 flex-1 sm:flex-initial"
                           >
                             {actionLoading === item.id ? "..." : "Selesai"}
                           </button>
@@ -356,10 +356,10 @@ export default function AdminDashboard() {
                               href={getWaLink(item)!}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="bg-green-600 text-white p-2.5 rounded-lg hover:bg-green-700"
+                              className="bg-[#25D366] hover:bg-[#20BA5A] text-white w-10 rounded-xl transition-all duration-150 h-10 flex items-center justify-center shadow-sm hover:shadow-md active:scale-95 cursor-pointer shrink-0"
                               title="Kirim WhatsApp"
                             >
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.977h.004c4.368 0 7.927-3.558 7.93-7.93a7.9 7.9 0 0 0-2.327-5.615zM7.994 14.52a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.69-4.294c-.2-.1-.1.353-.298.545a1.13 1.13 0 0 1-.806.326c-.32 0-.64-.08-1.28-.387-.624-.26-1.01-.762-1.39-1.28a8.3 8.3 0 0 1-.41-.6c-.2-.3-.2-.5 0-.7l.32-.4c.1-.2.2-.3.3-.4.1-.1.2-.2.2-.3 0-.1 0-.3-.1-.4-.09-.2-.72-1.74-.98-2.38-.26-.64-.52-.54-.72-.54h-.62c-.2 0-.5.1-.7.4-.2.2-.8.8-.8 2 0 1.2.9 2.4 1 2.6.1.1 1.7 2.6 4.1 3.6.6.2 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.07 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white shrink-0" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
                             </a>
                           )}
                         </div>
@@ -380,7 +380,7 @@ export default function AdminDashboard() {
                     {permintaan.map((item) => (
                       <div
                         key={item.id}
-                        className="bg-white border border-border-main rounded-xl flex items-center justify-between gap-4 p-4 shadow-sm hover:border-bg-dark/20 hover:-translate-y-0.5 transition-all duration-150"
+                        className="bg-white border border-border-main rounded-[16px] flex items-center justify-between gap-4 p-4 shadow-sm hover:border-bg-dark/20 hover:-translate-y-0.5 transition-all duration-150"
                       >
                         <div className="min-w-0">
                           <p className="font-bold text-text-main text-base truncate">{item.nama_customer || "Tanpa Nama"}</p>
@@ -391,13 +391,22 @@ export default function AdminDashboard() {
                             )}
                           </div>
                         </div>
-                        <button
-                          onClick={() => handleAction("confirm", item.id)}
-                          disabled={actionLoading === item.id}
-                          className="bg-bg-dark text-white px-5 py-3 rounded-lg text-xs md:text-sm font-semibold hover:bg-black cursor-pointer shrink-0 disabled:opacity-50"
-                        >
-                          {actionLoading === item.id ? "..." : "Terima"}
-                        </button>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <button
+                            onClick={() => handleAction("tolak", item.id)}
+                            disabled={actionLoading === item.id}
+                            className="bg-white text-red-danger border border-danger-border px-4 rounded-xl text-xs md:text-sm font-semibold hover:bg-danger-bg transition-all duration-150 cursor-pointer disabled:opacity-50 h-10 flex items-center justify-center active:scale-95"
+                          >
+                            {actionLoading === item.id ? "..." : "Tolak"}
+                          </button>
+                          <button
+                            onClick={() => handleAction("confirm", item.id)}
+                            disabled={actionLoading === item.id}
+                            className="bg-bg-dark text-white px-4 rounded-xl text-xs md:text-sm font-semibold hover:bg-black transition-all duration-150 cursor-pointer disabled:opacity-50 h-10 flex items-center justify-center active:scale-95"
+                          >
+                            {actionLoading === item.id ? "..." : "Terima"}
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -415,7 +424,7 @@ export default function AdminDashboard() {
                     {antrianSelesai.map((item) => (
                       <div
                         key={item.id}
-                        className="bg-white border border-border-main/70 rounded-xl flex items-center justify-between gap-4 p-4 opacity-75"
+                        className="bg-white border border-border-main/70 rounded-[16px] flex items-center justify-between gap-4 p-4 opacity-75"
                       >
                         <div className="flex items-center gap-4 min-w-0">
                           {/* Nomor Grayed */}
