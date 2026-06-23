@@ -379,7 +379,7 @@ export default function StatusPage() {
             </div>
           ) : queue.status === "dipanggil" ? (
             <div className="space-y-4">
-              <div className="relative w-24 h-24 mx-auto flex items-center justify-center bg-white border border-[#E4E7EC] rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+              <div className="relative w-24 h-24 mx-auto flex items-center justify-center bg-white border border-border-main rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0053C4" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 text-[#0053C4]">
                   <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
                   <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
