@@ -89,7 +89,7 @@ export default function LandingPage() {
           <div className="flex items-start justify-between w-full">
             {/* Step 1 */}
             <div className="flex flex-col items-center gap-1.5 z-10 bg-transparent w-20 shrink-0">
-              <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-[#101213] text-white shadow-sm shrink-0">
+              <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-bg-dark text-white shadow-sm shrink-0">
                 1
               </div>
               <span className="text-[9px] md:text-[10px] font-bold text-text-main text-center leading-tight">Isi Data</span>
@@ -160,7 +160,7 @@ export default function LandingPage() {
                   id="nama"
                   value={nama}
                   onChange={(e) => setNama(e.target.value)}
-                  className="input-field !pl-11"
+                  className="input-field pl-11!"
                   required
                   autoComplete="name"
                   disabled={loading}
@@ -182,7 +182,7 @@ export default function LandingPage() {
                   id="nomor_wa"
                   value={nomorWa}
                   onChange={(e) => setNomorWa(e.target.value)}
-                  className="input-field !pl-11"
+                  className="input-field pl-11!"
                   autoComplete="tel"
                   disabled={loading}
                   placeholder="Contoh: 628123456789"

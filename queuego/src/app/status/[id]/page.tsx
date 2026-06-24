@@ -54,14 +54,14 @@ const getStepState = (stepNumber: number, status: QueueStatus) => {
 const renderStepIcon = (stepNumber: number, state: "completed" | "active" | "upcoming") => {
   if (state === "completed") {
     return (
-      <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-[#101213] text-white shadow-sm shrink-0">
+      <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-bg-dark text-white shadow-sm shrink-0">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
     );
   }
   if (state === "active") {
     return (
-      <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-white border-2 border-[#101213] text-[#101213] shadow-sm shrink-0 animate-pulse">
+      <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold bg-white border-2 border-bg-dark text-bg-dark shadow-sm shrink-0 animate-pulse">
         {stepNumber}
       </div>
     );
@@ -505,7 +505,7 @@ export default function StatusPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-bg-base px-4 py-8 relative overflow-hidden">
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#101213]/60 backdrop-blur-sm px-4 animate-fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-bg-dark/60 backdrop-blur-sm px-4 animate-fade-in">
           <div className="bg-white border border-border-main rounded-[24px] p-6 max-w-sm w-full space-y-4 shadow-[0_12px_40px_rgba(0,0,0,0.12)] relative text-center animate-scale-in">
             {/* Close Button X */}
             <button
@@ -553,7 +553,7 @@ export default function StatusPage() {
             </div>
 
             {/* Line 1 */}
-            <div className={`flex-1 h-[2px] mt-3.5 ${step2State === "completed" || step2State === "active" ? "bg-[#101213]" : "bg-border-main"}`}></div>
+            <div className={`flex-1 h-[2px] mt-3.5 ${step2State === "completed" || step2State === "active" ? "bg-bg-dark" : "bg-border-main"}`}></div>
 
             {/* Step 2 */}
             <div className="flex flex-col items-center gap-1.5 z-10 bg-transparent w-20 shrink-0">
@@ -562,7 +562,7 @@ export default function StatusPage() {
             </div>
 
             {/* Line 2 */}
-            <div className={`flex-1 h-[2px] mt-3.5 ${step3State === "completed" || step3State === "active" ? "bg-[#101213]" : "bg-border-main"}`}></div>
+            <div className={`flex-1 h-[2px] mt-3.5 ${step3State === "completed" || step3State === "active" ? "bg-bg-dark" : "bg-border-main"}`}></div>
 
             {/* Step 3 */}
             <div className="flex flex-col items-center gap-1.5 z-10 bg-transparent w-20 shrink-0">
@@ -668,7 +668,7 @@ export default function StatusPage() {
                     {/* Outer pulsing ring for "waiting" effect */}
                     <div className="absolute inset-0 rounded-full bg-warning-bg/40 animate-ping opacity-75" style={{ animationDuration: '2.5s' }}></div>
                     
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#101213" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 text-text-main animate-pulse">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-bg-dark)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 text-text-main animate-pulse">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
